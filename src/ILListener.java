@@ -1,8 +1,8 @@
 
 /**
-* ItemLottery v1.x
+* ItemLottery v3.x
 * Copyright (C) 2011 Visual Illusions Entertainment
-* @author darkdiplomat <darkdiplomat@hotmail.com>
+* @author darkdiplomat <darkdiplomat@visualillusionsent.net>
 *
 * This file is part of ItemLottery.
 *
@@ -34,7 +34,7 @@ public class ILListener extends PluginListener {
 	public boolean onCommand(Player player, String[] cmd){
 		if(cmd[0].equals("/lotto")){
 			if(cmd.length < 2){
-				player.sendMessage("§e------§dItemLottery§e------");
+				player.sendMessage("§e------§dItemLottery v.3.1§e------");
 				player.sendMessage("§dCost = §b"+ILD.getCost());
 				player.sendMessage("§d/lotto time §b- displays time till drawing");
 				player.sendMessage("§d/lotto play §b- buys a ItemLottery ticket");

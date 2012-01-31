@@ -2,9 +2,9 @@ import java.util.List;
 import java.util.Random;
 
 /**
-* ItemLottery v1.x
+* ItemLottery v3.x
 * Copyright (C) 2011 Visual Illusions Entertainment
-* @author darkdiplomat <darkdiplomat@hotmail.com>
+* @author darkdiplomat <darkdiplomat@visualillusionsent.net>
 *
 * This file is part of ItemLottery.
 *
@@ -191,33 +191,34 @@ public class ILActions {
 		}
 	}
 	
-	public void addItem(Inventory inv, int ID, int Damage, int amount){
+	private void addItem(Inventory inv, int ID, int Damage, int amount){
 		for (int i = 0; i < inv.getContentsSize(); i++){
 			if (amount > 0){
 				Item item = inv.getItemFromSlot(i);
 				if (item != null){
+					int iam = item.getAmount();
 					if (item.getItemId() == ID){
 						if (item.getDamage() == Damage){
 							if (amount > 64){
-								if(item.getAmount() < 64){
-									inv.removeItem(i);
-									inv.setSlot(ID, 64, Damage, i);
-									inv.update();
-									amount -= item.getAmount();
+								if(iam < amount){
+									item.setAmount(64);
+									amount -= (64 - iam);
 								}
 								else{
-									continue;
+									if(iam < amount){
+										item.setAmount(iam+amount);
+										amount -= (64 - iam);
+									}
 								}
 							}
 							else{
-								if(item.getAmount() < 64){
-									inv.removeItem(i);
-									inv.setSlot(ID, amount+item.getAmount(), Damage, i);
-									inv.update();
-									amount -= item.getAmount();
+								if(iam < 64 && (iam+amount < 64)){
+									item.setAmount(iam+amount);
+									amount -= (64 - iam);
 								}
 								else{
-									continue;
+									item.setAmount(64);
+									amount -= (64-iam);
 								}
 							}
 						}
@@ -226,13 +227,11 @@ public class ILActions {
 				else{
 					if (amount > 64){
 						inv.setSlot(ID, 64, Damage, i);
-						inv.update();
 						amount -= 64;
 					}
 					else{
 						inv.setSlot(ID, amount, Damage, i);
-						inv.update();
-						break;
+						amount = 0;
 					}
 				}
 			}

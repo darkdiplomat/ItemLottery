@@ -11,7 +11,7 @@ Licensed under the GNU General Public License v3
 
 License
 ---------
-ItemLottery v1.x
+ItemLottery v3.x
 Copyright (C) 2012 Visual Illusions Entertainment
 
 Author: Jason Jones (darkdiplomat) <darkdiplomat@visualillusionsent.net>

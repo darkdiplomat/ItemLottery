@@ -3,9 +3,9 @@ import java.util.TimerTask;
 import java.util.logging.Logger;
 
 /**
-* ItemLottery v1.x
+* ItemLottery v3.x
 * Copyright (C) 2011 Visual Illusions Entertainment
-* @author darkdiplomat <darkdiplomat@hotmail.com>
+* @author darkdiplomat <darkdiplomat@visualillusionsent.net>
 *
 * This file is part of ItemLottery.
 *

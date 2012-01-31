@@ -1,9 +1,9 @@
 import java.util.logging.Logger;
 
 /**
-* ItemLottery v1.x
+* ItemLottery v3.x
 * Copyright (C) 2011 Visual Illusions Entertainment
-* @author darkdiplomat <darkdiplomat@hotmail.com>
+* @author darkdiplomat <darkdiplomat@visualillusionsent.net>
 *
 * This file is part of ItemLottery.
 *
@@ -28,7 +28,7 @@ public class ItemLottery extends Plugin {
 	ILData ILD;
 	
 	String name = "ItemLottery";
-	String version = "3.0.1";
+	String version = "3.1";
 	String author = "darkdiplomat";
 	
 	
